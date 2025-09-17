@@ -65,6 +65,11 @@ Task:
 2) Iterate over it with for...in and display each key and value.
 */
 
+const courses= { A01 : "MATH101", A02 : "MATH102",A03 : "MATH201"}
+for( i in courses){
+   console.log(courses[i])
+}
+
 // =========================================
 // TODO-3: STRING OBJECT — charAt() & length
 // =========================================
