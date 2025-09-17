@@ -79,6 +79,13 @@ Task:
 2) Use .charAt(index) and .length to output characters and size.
 */
 
+const str = "Hello";
+
+str.charAt(2);  
+str.length;    
+
+
+
 // ===================================
 // TODO-4: DATE — day, month, and year
 // ===================================
