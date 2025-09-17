@@ -130,6 +130,31 @@ Task:
    in each block so you can see the flow of control.
 */
 
+const arr = [2, 4, 6, 12,23 , 21, 14, 54, 6, 89]
+
+
+function findMax(array){
+   try{
+      if (array.length===0 ){
+         throw new Error("The array is empty ")
+         }
+   const maxVal = Math.max(...arr);
+   console.log("Max value found:", maxVal);
+   return maxVal;
+
+   } catch (e) {
+   console.error("Error caught:", e.message);
+   } finally {
+   console.log("Finally block");
+   }
+}
+
+
+ 
+ findMax(arr);
+ 
+ findMax([]);
+
 // ===================================================================================
 // TODO-7: REGEX + forEach — find words containing 'ab' and log matches from the list
 // ===================================================================================
