@@ -21,6 +21,40 @@ Task:
 3) Add a setter updateGpa(newGpa) or use a set accessor for gpa that validates 0.0–4.0.
 4) Create an instance/object and output its attributes using the getter(s).
 */
+class Student  {
+
+   constructor(firstName , lastName, gpa){
+      this.firstName=firstName;
+      this.lastName=lastName;
+      this.gpa=gpa;
+      
+
+   }
+   get getFullName(){
+      return this.firstName + " " + this.lastName;
+   }
+   get getGPA(){
+      return this.gpa;
+   }
+   
+
+   set updateGpa(newGpa){
+      if(newGpa>=0.0 && newGpa<=4.0 ){
+         this.gpa = newGpa
+      }
+      else{
+         console.log("Invalid GPA")
+      }
+   }
+
+}
+
+const student1 = new Student("Ali", "Saleh", 3.6);
+console.log(student1.getFullName +", The GPA IS: " + student1.getGPA)
+
+
+
+
 
 // ====================================
 // TODO-2: OBJECT AS MAP + for...in LOOP
@@ -31,6 +65,11 @@ Task:
 2) Iterate over it with for...in and display each key and value.
 */
 
+const courses= { A01 : "MATH101", A02 : "MATH102",A03 : "MATH201"}
+for( i in courses){
+   console.log(courses[i])
+}
+
 // =========================================
 // TODO-3: STRING OBJECT — charAt() & length
 // =========================================
@@ -39,6 +78,13 @@ Task:
 1) Create a String object or plain string.
 2) Use .charAt(index) and .length to output characters and size.
 */
+
+const str = "Hello";
+
+str.charAt(2);  
+str.length;    
+
+
 
 // ===================================
 // TODO-4: DATE — day, month, and year
@@ -50,6 +96,14 @@ Task:
 //    (Hint: getDate(), getMonth(), getFullYear() )
 */
 
+
+const date= new Date();
+
+console.log("The current day is "+ date.getDate());
+console.log("The current month is "+ date.getMonth());
+console.log("The current year is "+ date.getFullYear());
+
+
 // ============================================================
 // TODO-5: ARRAY + SPREAD — find MIN and MAX from 10 numbers
 // ============================================================
@@ -59,6 +113,11 @@ Task:
 2) Use spread syntax with Math.min(...) and Math.max(...) to find extremes.
 3) Display both values.
 */
+
+const number = [2, 4, 6, 12,23 , 21, 14, 54, 6, 89]
+console.log(Math.max(...number))
+console.log(Math.min(...number))
+
 
 // ===================================================================
 // TODO-6: EXCEPTIONS — try/catch/finally with EMPTY ARRAY edge case
@@ -71,6 +130,31 @@ Task:
    in each block so you can see the flow of control.
 */
 
+const arr = [2, 4, 6, 12,23 , 21, 14, 54, 6, 89]
+
+
+function findMax(array){
+   try{
+      if (array.length===0 ){
+         throw new Error("The array is empty ")
+         }
+   const maxVal = Math.max(...arr);
+   console.log("Max value found:", maxVal);
+   return maxVal;
+
+   } catch (e) {
+   console.error("Error caught:", e.message);
+   } finally {
+   console.log("Finally block");
+   }
+}
+
+
+ 
+ findMax(arr);
+ 
+ findMax([]);
+
 // ===================================================================================
 // TODO-7: REGEX + forEach — find words containing 'ab' and log matches from the list
 // ===================================================================================
@@ -82,5 +166,15 @@ Given: const words = ["ban", "babble", "make", "flab"];
 3) For matches, log "<word> matches!".
 4) Display the words that matches the pattern.
 */
+
+const words = ["ban", "babble", "make", "flab"];
+const re = /ab/;
+
+words.forEach(word => {
+  if (re.test(word)) {
+    console.log(`${word} matches!`);
+  }
+});
+
 
 // End of Advance JavaScript Lab — good luck!
