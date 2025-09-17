@@ -96,9 +96,9 @@ Task:
 //    (Hint: getDate(), getMonth(), getFullYear() )
 */
 
-const d = new Date();
 
 const date= new Date();
+
 console.log("The current day is "+ date.getDate());
 console.log("The current month is "+ date.getMonth());
 console.log("The current year is "+ date.getFullYear());
@@ -113,6 +113,11 @@ Task:
 2) Use spread syntax with Math.min(...) and Math.max(...) to find extremes.
 3) Display both values.
 */
+
+const number = [2, 4, 6, 12,23 , 21, 14, 54, 6, 89]
+console.log(Math.max(...number))
+console.log(Math.min(...number))
+
 
 // ===================================================================
 // TODO-6: EXCEPTIONS — try/catch/finally with EMPTY ARRAY edge case
